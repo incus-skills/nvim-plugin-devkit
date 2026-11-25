@@ -38,12 +38,13 @@ The conventional skeleton is only one part of the kit. The substantive contribut
 
 ## Working with the repository
 
-1. Load `skills/repository-ingress/SKILL.md` first when beginning AI-assisted work in this repository. It establishes the repository's role in the recursive development process.
-2. Identify whether the task is skill development, plugin application, or transfer validation.
-3. When applying the kit to a plugin, adapt the scaffold and guidance to that plugin's actual contract and problem shape; do not preserve template structure for its own sake.
-4. Record the concrete application evidence in the plugin project.
-5. When that evidence reveals a reusable correction, missing distinction, or revised applicability boundary, refine the relevant skill and supporting docs here.
-6. Keep the origin, evidence, limits, and unresolved questions visible. A skill is not simply "done"; its validation history and tested applicability are part of its state.
+**Session entry is required for both human and AI-assisted contributors.** Before beginning any task in this repository, read and apply [`skills/repository-ingress/SKILL.md`](skills/repository-ingress/SKILL.md). It establishes the repository's role in the recursive development process and the boundaries for work here.
+
+1. Identify whether the task is skill development, plugin application, or transfer validation.
+2. When applying the kit to a plugin, adapt the scaffold and guidance to that plugin's actual contract and problem shape; do not preserve template structure for its own sake.
+3. Record the concrete application evidence in the plugin project.
+4. When that evidence reveals a reusable correction, missing distinction, or revised applicability boundary, refine the relevant skill and supporting docs here.
+5. Keep the origin, evidence, limits, and unresolved questions visible. A skill is not simply "done"; its validation history and tested applicability are part of its state.
 
 ## Repository map
 
