@@ -1,41 +1,52 @@
 # nvim-plugin-devkit
 
-A reusable development and review kit for Neovim plugins.
+The development home for Neovim plugin skills: where practices are authored, exercised against real plugins, and recursively refined.
 
-The conventional plugin skeleton is the starting point, not the main contribution. This repository collects the development practices that were established through the implementation and review of [nvim-heredoc](https://github.com/incus-skills/nvim-heredoc): evidence-led review, explicit responsibility and event boundaries, state-maintenance patterns, headless interaction testing, and documentation that distinguishes contracts from implementation details.
+This repository is a **living skills-development workspace**, not a static template to copy once and leave behind. The skills in `skills/` are the primary artefact. The scaffold in `template/` is a vehicle for applying and testing those skills; the docs describe the practices and boundaries that guide their development.
 
-> **Status: initial field-derived edition.** These practices have been exercised in nvim-heredoc. Their transfer to other plugin shapes is not yet established. Treat patterns as candidates to test and adapt, not universal rules.
+The development loop is recursive:
 
-## What this provides
+```text
+skills → applied to a plugin → lessons from application → skills refined
+   ↑                                                        ↓
+   └──────────── applied to the next plugin ←───────────────┘
+```
 
-- A conventional Lua plugin layout to adapt.
-- A review process that separates observation, policy adjudication, specification, implementation, and verification.
-- Architecture notes for plugins that maintain interpreted buffer state or react to multiple editing events.
-- Headless Neovim testing guidance, including live Insert-mode input and scheduling boundaries.
-- Documentation conventions for separating current contract, current implementation, transitional mechanisms, and potential capabilities.
-- AI-assisted workflow skills that preserve evidence, scope, and authorization boundaries.
+Every plugin built with, or reviewed using, these skills can provide a validation event. Application tests whether guidance transfers, exposes where it is conditional, incomplete, misleading, or unnecessarily complex, and may produce a refinement committed back here. The loop does not assume that every local adaptation is reusable: the originating plugin's context and evidence remain recorded there, while this repository carries the refined general guidance and its applicability boundaries.
 
-## What this does not provide
+## Origin and evidence
+
+The initial skill set was developed through the review and implementation of [nvim-heredoc](https://github.com/incus-skills/nvim-heredoc). That project is the reference case and initial evidence base, not content to be copied into this repository. Its heredoc grammar, scanner, bugs, fixtures, and implementation decisions remain in the nvim-heredoc repository.
+
+> **Status: initial field-derived edition.** The current practices have been exercised in nvim-heredoc. Their transfer across independent plugin problem shapes remains to be established. Treat patterns as candidates with stated applicability conditions, not universal rules.
+
+## What this repository maintains
+
+- **Skills** in `skills/`: the primary, evolving guidance for AI-assisted Neovim plugin development and review.
+- **Development notes** in `docs/`: the evidence, patterns, conventions, adoption rules, and validation criteria that support skill evolution.
+- **Scaffold** in `template/`: a conventional plugin starting point used to exercise the skills, not a finished product or prescribed architecture.
+
+The conventional skeleton is only one part of the kit. The substantive contribution is the accumulated practice around evidence-led review, explicit responsibility and event boundaries, state maintenance where needed, headless interaction testing, and documentation that distinguishes contracts from implementation details.
+
+## What this does not prescribe
 
 - A shell/heredoc implementation or scanner.
 - A mandatory architecture for every Neovim plugin.
 - A claim that every plugin needs incremental snapshots, three-valued containment, or five CI jobs.
 - A substitute for reading Neovim's current API documentation or testing against the supported Neovim versions.
+- Automatic promotion of every project-specific workaround into a general skill.
+
+## Working with the repository
+
+1. Load `skills/repository-ingress/SKILL.md` first when beginning AI-assisted work in this repository. It establishes the repository's role in the recursive development process.
+2. Identify whether the task is skill development, plugin application, or transfer validation.
+3. When applying the kit to a plugin, adapt the scaffold and guidance to that plugin's actual contract and problem shape; do not preserve template structure for its own sake.
+4. Record the concrete application evidence in the plugin project.
+5. When that evidence reveals a reusable correction, missing distinction, or revised applicability boundary, refine the relevant skill and supporting docs here.
+6. Keep the origin, evidence, limits, and unresolved questions visible. A skill is not simply "done"; its validation history and tested applicability are part of its state.
 
 ## Repository map
 
+- `skills/`: primary evolving skills, including repository ingress.
+- `docs/`: supporting development, review, architecture, testing, and validation guidance.
 - `template/`: starter plugin skeleton and example test/CI structure.
-- `docs/`: architecture, review, testing, and adoption guidance.
-- `skills/`: reusable instructions for AI-assisted development and review.
-
-## Starting a plugin
-
-1. Copy or generate from `template/` and replace every `plugin-name` placeholder.
-2. Decide the plugin's actual runtime contract and supported Neovim versions before choosing architecture.
-3. Keep unit tests, live buffer integration, external-process tests, formatting, and distribution/coexistence checks separate where their evidence differs.
-4. Use the review process when behaviour is uncertain: observe first, adjudicate policy, specify the contract, then implement.
-5. Treat the first independent plugin built with this kit as a transfer test. Feed mismatches back into this repository only when they reveal a reusable improvement.
-
-## Origin
-
-The initial patterns were extracted from the review and implementation history of [incus-skills/nvim-heredoc](https://github.com/incus-skills/nvim-heredoc). Project-specific grammar, bugs, fixtures, and implementation decisions remain in that project. This repository carries only the practices that may be reusable elsewhere.
